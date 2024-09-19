@@ -1,0 +1,8 @@
+<h2>Registro de Atividades Físicas</h2>
+<form>
+  <label>Nome da Atividade:</label>
+  <input type="text" [(ngModel)]="atividade.nome">
+  <label>Tempo (min):</label>
+  <input type="number" [(ngModel)]="atividade.tempo">
+  <button (click)="salvarAtividade()">Salvar</button>
+</form>

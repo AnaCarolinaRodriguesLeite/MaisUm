@@ -1,0 +1,8 @@
+<h2>Registro de Refeições</h2>
+<form>
+  <label>Nome da Refeição:</label>
+  <input type="text" [(ngModel)]="refeicao.nome">
+  <label>Calorias:</label>
+  <input type="number" [(ngModel)]="refeicao.calorias">
+  <button (click)="salvarRefeicao()">Salvar</button>
+</form>
