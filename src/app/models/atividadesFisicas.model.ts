@@ -5,6 +5,6 @@ export interface AtividadeFisica {
   UsuarioId: number;
   Nome: string;
   DuracaoMinutos: number;
-  Data: Date;
+  Data: string;
   Usuario: Usuario;
 }

@@ -7,7 +7,7 @@ import { Progresso } from '../models/progresso.model';
 @Injectable({
   providedIn: 'root'
 })
-export class RefeicaoService {
+export class ProgressoService {
 
   constructor(private http: HttpClient) {}
 

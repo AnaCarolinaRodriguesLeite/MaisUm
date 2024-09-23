@@ -6,6 +6,6 @@ export interface Alimentacao {
   tipo: string;
   descricao: string;
   calorias: number;
-  data: Date;
+  data: string;
   usuario?: Usuario;
 }

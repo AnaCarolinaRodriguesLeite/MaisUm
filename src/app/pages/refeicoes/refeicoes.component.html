@@ -1,0 +1,27 @@
+<div class="alimentacao-container">
+  <h2>Registrar Alimentação</h2>
+
+  <form [formGroup]="refeicaoForm" (ngSubmit)="addRefeicao()">
+    <div class="form-group">
+      <label for="tipoRefeicao">Tipo de Refeição:</label>
+      <input type="text" id="tipoRefeicao" formControlName="tipo" placeholder="Informe o tipo de refeição (café da manhã, almoço, etc.)">
+    </div>
+
+    <div class="form-group">
+      <label for="descricaoRefeicao">Descrição da Refeição:</label>
+      <input type="text" id="descricaoRefeicao" formControlName="descricao" placeholder="Descreva a refeição">
+    </div>
+
+    <div class="form-group">
+      <label for="caloriasRefeicao">Calorias Consumidas (kcal):</label>
+      <input type="number" id="caloriasRefeicao" formControlName="calorias" placeholder="Informe as calorias consumidas">
+    </div>
+
+    <div class="form-group">
+      <label for="dataRefeicao">Data da Refeição:</label>
+      <input type="date" id="dataRefeicao" formControlName="data">
+    </div>
+
+    <button type="submit" [disabled]="!refeicaoForm.valid">Salvar Alimentação</button>
+  </form>
+</div>

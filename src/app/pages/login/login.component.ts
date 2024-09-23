@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
+  selector: 'login',
   standalone: true,
   imports: [],
   templateUrl: './login.component.html',
@@ -9,4 +10,9 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
+  constructor(private router: Router) {}
+  
+  goToCadastro() {
+    this.router.navigate(['/cadastro']);
+  }
 }

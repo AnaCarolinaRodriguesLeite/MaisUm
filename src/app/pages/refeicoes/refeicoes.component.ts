@@ -1,30 +1,39 @@
 import { Component, OnInit } from '@angular/core';
-import { RefeicaoService } from '../../../service/Refeicao.service';
-import { Alimentacao } from '../../../models/refeicao.model';
+import { RefeicaoService } from '../../service/Refeicao.service';
+import { Alimentacao } from '../../models/refeicao.model';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-refeicoes',
+  selector: 'refeicoes',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './refeicoes.component.html',
   styleUrls: ['./refeicoes.component.css']
 })
 export class RefeicoesComponent implements OnInit {
   refeicoes: Alimentacao[] = [];
-  newRefeicao: Alimentacao = {
-    tipo: '', 
-    descricao: '',
-    alimentacaoId: 0,
-    usuarioId: 0,
-    calorias: 0,
-    data: new Date()
-  };
+  refeicaoForm!: FormGroup;
   selectedRefeicao: Alimentacao | null = null;
 
-  constructor(private refeicaoService: RefeicaoService) {}
+  constructor(
+    private refeicaoService: RefeicaoService,
+    private formBuilder: FormBuilder
+  ) {}
 
   ngOnInit(): void {
     this.loadRefeicoes();
+    this.iniciarforms();
+  }
+
+  iniciarforms(){
+    this.refeicaoForm = this.formBuilder.group({
+      tipo: ['', Validators.required],
+      descricao: ['', Validators.required],
+      alimentacaoId: [0],
+      usuarioId: [0],
+      calorias: [0, [Validators.required, Validators.min(1)]],
+      data: ['', Validators.required]
+    });
   }
 
   loadRefeicoes(): void {
@@ -35,20 +44,17 @@ export class RefeicoesComponent implements OnInit {
   }
 
   addRefeicao(): void {
-    this.refeicaoService.addRefeicao(this.newRefeicao).subscribe(
-      (data) => {
-        this.refeicoes.push(data);
-        this.newRefeicao = {
-          tipo: '', 
-          descricao: '',
-          alimentacaoId: 0,
-          usuarioId: 0,
-          calorias: 0,
-          data: new Date()
-        }; // Resetar o formulário
-      },
-      (error) => console.error('Erro ao adicionar refeição', error)
-    );
+    if (this.refeicaoForm.valid) {
+      const novaRefeicao: Alimentacao = this.refeicaoForm.value;
+      
+      this.refeicaoService.addRefeicao(novaRefeicao).subscribe(
+        (data) => {
+          this.refeicoes.push(data);
+          this.refeicaoForm.reset(); // Resetar o formulário após o envio
+        },
+        (error) => console.error('Erro ao adicionar refeição', error)
+      );
+    }
   }
 
   updateRefeicao(refeicao: Alimentacao): void {

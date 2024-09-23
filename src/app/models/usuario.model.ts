@@ -3,6 +3,6 @@ export interface Usuario {
   Nome: string;
   Email: string;
   Senha: string;
-  DataNascimento: Date;
+  DataNascimento: string;
   // DataCadastro: Date; // Optional property
 }

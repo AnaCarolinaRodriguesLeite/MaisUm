@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progresso</title>
+  </head>
+  <body>
+    <header>
+      <h1>Progresso</h1>
+    </header>
+    <div class="progresso-container">
+      <h2>Registrar Progresso</h2>
+
+      <div class="form-group">
+        <label for="peso">Peso (kg):</label>
+        <input
+          type="number"
+          id="peso"
+          [(ngModel)]="newProgresso.Peso"
+          placeholder="Informe seu peso"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="data">Data:</label>
+        <input type="date" id="data" [(ngModel)]="newProgresso.Data" />
+      </div>
+
+      <div class="form-group">
+        <label for="observacoes">Observações:</label>
+        <textarea
+          id="observacoes"
+          [(ngModel)]="newProgresso.Observacoes"
+          placeholder="Digite suas observações"
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Nome do Usuário:</label>
+        <p>{{ newProgresso.Usuario.Nome }}</p>
+      </div>
+
+      <button (click)="addProgresso()">Salvar Progresso</button>
+
+      <div *ngIf="mensagemSucesso" class="mensagem-sucesso">
+        {{ mensagemSucesso }}
+      </div>
+    </div>
+  </body>
+</html>

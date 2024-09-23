@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AtividadesComponent } from './pages/pages/atividades/atividades.component';
-import { RefeicoesComponent } from './pages/pages/refeicoes/refeicoes.component';
-import { CadastroComponent } from './pages/pages/cadastro/cadastro.component';
-import { LoginComponent } from './pages/pages/login/login.component';
+import { AtividadesComponent } from './pages/atividades/atividades.component';
+import { RefeicoesComponent } from './pages/refeicoes/refeicoes.component';
+import { CadastroComponent } from './pages/cadastro/cadastro.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ProgressoComponent } from './pages/progresso/progresso.component';
+import { SobreComponent } from './pages/sobre/sobre.component';
+import { ContatosComponent } from './pages/contatos/contatos.component';
+import { ServicosComponent } from './pages/servicos/servicos.component';
 import { AppComponent } from './app.component';
 
 export const routes: Routes = [
@@ -11,10 +15,12 @@ export const routes: Routes = [
   { path: 'refeicoes', component: RefeicoesComponent },
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'cadastro', component: CadastroComponent },
-  { path: 'home', component:  AppComponent}
+  { path: 'progresso', component: ProgressoComponent },
+  { path: 'sobre', component: SobreComponent },
+  //{ path: '', redirectTo: '/app-root', pathMatch: 'full' },
+  { path: 'contato', component: ContatosComponent},
+  { path: 'servicos', component: ServicosComponent},
+  { path: 'app-root', component: AppComponent}
 ];
 
 @NgModule({
