@@ -1,18 +1,67 @@
-/* Estilos gerais para as duas páginas */
-.container {
-  width: 100%;
+/* Estilos gerais */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #eef1f5;
+}
+
+header {
+  background-color: #dd4fb7;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+h1, h2 {
+  margin: 0;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: #333;
+}
+
+/* Seções */
+section {
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  background: #f4f4f4;
+  margin: 10px 0;
+  padding: 10px;
+  border-left: 5px solid #dd4fb7;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+/* Estilos para o formulário */
+.formulario {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 20px;
 }
 
 .form-group {
@@ -35,19 +84,20 @@ input[type="date"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  transition: border-color 0.3s;
 }
 
-input[type="text"]:focus,
-input[type="number"]:focus,
-input[type="date"]:focus {
-  border-color: #007bff;
+input:focus {
+  border-color: #dd4fb7;
   outline: none;
 }
 
 button {
+  align-items: center; /* Alinha os botões verticalmente */
+  gap: 50px; /* Espaçamento entre os botões */
   width: 100%;
-  padding: 12px;
-  background-color: #007bff;
+  padding: 15px;
+  background-color: #dd4fb7;
   color: #fff;
   font-size: 16px;
   font-weight: bold;
@@ -58,24 +108,59 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #dd4fb7;
 }
 
-.mensagem-sucesso {
+/* Estilo para a lista de atividades */
+.atividades-cadastradas {
   margin-top: 20px;
+}
+
+.atividades-cadastradas ul {
+  padding-left: 0;
+}
+
+.atividades-cadastradas li {
+  background-color: #f4f4f4;
   padding: 10px;
-  background-color: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
+  margin-bottom: 10px;
   border-radius: 4px;
-  text-align: center;
+  border-left: 5px solid #dd4fb7;
 }
 
-/* Estilos específicos para cada página */
-.atividade-container {
-  margin-top: 40px;
+.atividades-cadastradas h2 {
+  color: #333;
+  margin-bottom: 15px;
 }
 
-.alimentacao-container {
-  margin-top: 40px;
+/* Responsividade */
+@media (max-width: 768px) {
+  .formulario, section {
+    padding: 15px;
+  }
+  
+  button {
+    font-size: 14px;
+  }
+
+.atividade-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.atividade-info {
+    flex-grow: 1;
+}
+
+.atividade-buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+.atividade-buttons button:hover {
+    color: #007bff;
+}
 }

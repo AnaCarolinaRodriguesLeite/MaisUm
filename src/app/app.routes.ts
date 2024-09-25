@@ -9,6 +9,7 @@ import { SobreComponent } from './pages/sobre/sobre.component';
 import { ContatosComponent } from './pages/contatos/contatos.component';
 import { ServicosComponent } from './pages/servicos/servicos.component';
 import { AppComponent } from './app.component';
+import { MenuComponent } from './pages/menu/menu.component';
 
 export const routes: Routes = [
   { path: 'atividades', component: AtividadesComponent },
@@ -20,7 +21,8 @@ export const routes: Routes = [
   //{ path: '', redirectTo: '/app-root', pathMatch: 'full' },
   { path: 'contato', component: ContatosComponent},
   { path: 'servicos', component: ServicosComponent},
-  { path: 'app-root', component: AppComponent}
+  { path: 'app-root', component: AppComponent},
+  { path: 'menu', component: MenuComponent },
 ];
 
 @NgModule({

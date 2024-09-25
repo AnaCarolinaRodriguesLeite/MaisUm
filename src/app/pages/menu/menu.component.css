@@ -1,0 +1,50 @@
+/* styles.css */
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.sidebar {
+  background-color: #f8f9fa;
+  border-right: 1px solid #ddd;
+}
+
+.user-info img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.nav-link {
+  font-size: 20px;
+  color: #dd4fb7;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.main-content {
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  margin-top: 20px;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-title {
+  font-size: 1.2rem;
+}
+
+.card-text {
+  margin-bottom: 10px;
+}

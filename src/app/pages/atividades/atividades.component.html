@@ -1,73 +1,78 @@
-<div class="container">
-  <h2>Cadastro de Atividade</h2>
-
-  <div class="form-group">
-    <label for="descricao">Descrição</label>
-    <input
-      type="text"
-      id="descricao"
-      class="form-control"
-      [(ngModel)]="newAtividade.Nome"
-      placeholder="Informe a descrição"
-      required
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-  </div>
+</head>
+<body>
+    <header>
+        <h1>Cadastro de Atividade</h1>
+    </header>
 
-  <!-- <div class="form-group">
-    <label for="tipo">Tipo</label>
-    <select
-      id="tipo"
-      class="form-control"
-      [(ngModel)]="atividades.tipo"
-      required
-    >
-      <option value="Cardio">Cardio</option>
-      <option value="Força">Força</option>
-      <option value="Alongamento">Alongamento</option>
-    </select>
-  </div> -->
+    <section class="formulario">
+        <form>
+            <div class="form-group">
+                <label for="descricao">Descrição</label>
+                <input
+                    type="text"
+                    id="descricao"
+                    class="form-control"
+                    [(ngModel)]="newAtividade.Nome" name="Nome"
+                    placeholder="Informe a descrição"
+                    required
+                />
+            </div>
 
-  <!-- <div class="form-group">
-    <label for="calorias">Calorias</label>
-    <input
-      type="number"
-      id="calorias"
-      class="form-control"
-      [(ngModel)]="atividades.calorias"
-      placeholder="Informe as calorias"
-      required
-    />
-  </div> -->
+            <div class="form-group">
+                <label for="duracao">Duração (minutos)</label>
+                <input
+                    type="number"
+                    id="duracao"
+                    class="form-control"
+                    [(ngModel)]="newAtividade.DuracaoMinutos" name="DuracaoMinutos"
+                    placeholder="Informe a duração"
+                    required
+                />
+            </div>
 
-<div class="form-group">
-    <label for="calorias">Duração</label>
-    <input
-      type="number"
-      id="calorias"
-      class="form-control"
-      [(ngModel)]="newAtividade.DuracaoMinutos"
-      placeholder="Informe as calorias"
-      required
-    />
-  </div>
+            <div class="form-group">
+                <label for="data">Data</label>
+                <input
+                    type="date"
+                    id="data"
+                    class="form-control"
+                    [(ngModel)]="newAtividade.Data" name="Data"
+                    required
+                />
+            </div>
 
-  <div class="form-group">
-    <label for="data">Data</label>
-    <input
-      type="date"
-      id="data"
-      class="form-control"
-      [(ngModel)]="newAtividade.Data"
-      required
-    />
-  </div>
+            <button type="button" class="btn btn-primary" (click)="editingIndex === null ? addAtividade() : updateAtividade()">
+                {{ editingIndex === null ? 'Salvar' : 'Atualizar' }}
+            </button>
+        </form>
+    </section>
 
-  <button (click)="addAtividade()" class="btn btn-primary">Salvar Atividade</button>
+    <section class="atividades-cadastradas">
+        <h2>Atividades Cadastradas</h2>
+        <ul>
+            <li *ngFor="let atv of atividades || []; let i = index">
+                {{ atv.Nome }} - {{ atv.DuracaoMinutos }} min - {{ atv.Data | date:'dd/MM/yyyy' }}
+                <span class="atividade-buttons">
+                    <button type="button" class="atividade-buttons" style="width: 45px; margin-left: 230px; margin-right: 5px; " class="btn btn-link p-0" (click)="editAtividade(i)">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button type="button" class="atividade-buttons" class="btn btn-link p-0" style="width: 45px; margin-left: 200px; " (click)="deleteAtividade(i)">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </span>
+            </li>
+        </ul>
+    </section>
+</body>
+</html>
 
-  <h3>Atividades Cadastradas</h3>
-  <ul>
-    <li *ngFor="let atv of atividades || []">
-      {{ atv.Nome }} - {{ atv.DuracaoMinutos }} - {{ atv.Data }}
-    </li>
-  </ul>
-</div>

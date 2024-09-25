@@ -1,27 +1,57 @@
 # MaisUm
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.4.
+O **MaisUm** é uma plataforma de gestão de atividades físicas e alimentação, projetada para ajudar usuários a monitorar e melhorar seus hábitos de saúde e bem-estar. A ideia surgiu da necessidade crescente de controlar não apenas as atividades físicas, mas também a alimentação, de forma integrada e acessível.
 
-## Development server
+## Objetivo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+O projeto tem como objetivo facilitar o acompanhamento de metas pessoais de saúde, proporcionando uma interface amigável e ferramentas simples para o registro e monitoramento de atividades e refeições diárias.
 
-## Code scaffolding
+## Funcionalidades
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Registro de Atividades Físicas
+- Permite que o usuário registre diferentes tipos de atividades físicas, como corrida, caminhada e musculação.
+- Inserir a duração das atividades e calcular as calorias gastas, proporcionando uma visão precisa do consumo energético diário.
 
-## Build
+### Registro de Alimentação
+- Registrar refeições diárias com o nome dos alimentos consumidos e as calorias de cada refeição.
+- Comparar a ingestão calórica com as atividades físicas realizadas.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Acompanhamento de Progresso
+- Permitir inserir o peso atual e compará-lo com a meta de peso estabelecida pelo usuário.
+- Visualizar o progresso ao longo do tempo e ajustar atividades e alimentação conforme necessário.
 
-## Running unit tests
+### Visualização de Dados
+- Dados claros e acessíveis em tabelas, mostrando atividades realizadas, refeições e calorias consumidas.
+- Visão completa dos hábitos e desempenho ao longo do tempo.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Tecnologias Utilizadas
+- **Backend:** ASP.NET Web API para robustez e escalabilidade.
+- **Frontend:** HTML, CSS, JavaScript e Angular para uma interface interativa e responsiva.
+- **Banco de Dados:** SQL Server para gerenciar os dados dos usuários.
+- **Testes:** Testes unitários com xUnit, garantindo a qualidade e confiabilidade do projeto.
 
-## Running end-to-end tests
+## Instruções para Desenvolvimento
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Pré-requisitos
+- Certifique-se de ter o [Node.js](https://nodejs.org/) e o [Angular CLI](https://angular.io/cli) instalados no seu sistema.
+- Instale o SQL Server para gerenciar o banco de dados.
 
-## Further help
+### Configuração do Projeto
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/AnaCarolinaRodriguesLeite/Projeto_MaisUm
+   cd MaisUm
+
+2. Instale as dependências do projeto:
+    ```bash
+    npm install
+
+### Executando o Servidor de Desenvolvimento
+- Execute o servidor de desenvolvimento:
+   
+  ```bash
+  ng serve
+  ```
+
+Navegue até http://localhost:4200/. A aplicação será recarregada automaticamente se você alterar algum dos arquivos de origem

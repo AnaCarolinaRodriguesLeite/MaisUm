@@ -17,24 +17,6 @@ export class AppComponent {
 
   constructor(private router: Router) {}
 
-  loadComponent(componentName: string) {
-    switch (componentName) {
-      case 'app-root':
-        this.component = AppComponent;
-        break;
-      case 'sobre':
-        this.component = SobreComponent;
-        break;
-      case 'servicos':
-        this.component = ServicosComponent;
-        break;
-      case 'contato':
-        this.component = ContatosComponent;
-        break;
-      default:
-        this.component = null;
-    }
-  }
   goToHome() {
     this.router.navigate(['/']);
   }
@@ -44,19 +26,10 @@ export class AppComponent {
   goToServicos() {
     this.router.navigate(['/servicos']);
   }
-  goToLogin() {
-    this.router.navigate(['/login']);
-  }
   goToContato() {
     this.router.navigate(['/contato']);
   }
-  goAtividades(){
-    this.router.navigate(['/atividades']);
-  }
-  goProgresso(){
-    this.router.navigate(['/progresso']);
-  }
-  goRefeicoes(){
-    this.router.navigate(['/refeicoes']);
+  goToLogin() {
+    this.router.navigate(['/login']);
   }
 }

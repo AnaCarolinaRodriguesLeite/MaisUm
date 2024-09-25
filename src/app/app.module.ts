@@ -16,6 +16,7 @@ import { UsuarioService } from './service/Usuario.service';
 import { AtividadesFisicasService } from './service/AtividadeFisica.service';
 import { RefeicaoService } from './service/Refeicao.service';
 import { ProgressoService } from './service/Progresso.service';
+import { MenuComponent } from './pages/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ProgressoService } from './service/Progresso.service';
     CadastroComponent,
     SobreComponent,
     ContatosComponent,
-    ServicosComponent
+    ServicosComponent,
+    MenuComponent
   ],
   imports: [
     FormsModule,

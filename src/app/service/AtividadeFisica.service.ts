@@ -12,7 +12,7 @@ export class AtividadesFisicasService {
   constructor(private http: HttpClient) {}
 
   getAtividadesFisicas(): Observable<AtividadeFisica[]> {
-    return this.http.get<AtividadeFisica[]>(API_ENDPOINTS.Refeicoes.getRefeicoes);
+    return this.http.get<AtividadeFisica[]>(API_ENDPOINTS.AtividadesFisicas.getAtividadesFisicas);
   }
 
   addAtividadesFisicas(atividadesFisicas: AtividadeFisica): Observable<AtividadeFisica> {

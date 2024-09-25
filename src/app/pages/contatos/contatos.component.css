@@ -1,5 +1,5 @@
 .contato-container {
-  max-width: 600px;
+  max-width: 1800px;
   margin: 0 auto;
   padding: 20px;
   text-align: center;
@@ -17,7 +17,7 @@ h2 {
 }
 
 .foto {
-  width: 150px;
+  width: 180px;
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
