@@ -26,9 +26,9 @@ O projeto tem como objetivo facilitar o acompanhamento de metas pessoais de saú
 
 ## Tecnologias Utilizadas
 - **Backend:** ASP.NET Web API para robustez e escalabilidade.
-- **Frontend:** HTML, CSS, JavaScript e Angular para uma interface interativa e responsiva.
+- **Frontend:** HTML, CSS, JavaScript e Angular 18 para uma interface interativa e responsiva.
 - **Banco de Dados:** SQL Server para gerenciar os dados dos usuários.
-- **Testes:** Testes unitários com xUnit, garantindo a qualidade e confiabilidade do projeto.
+- **Testes:** Testes unitários com o proprio ASP.NET Web Api, garantindo a qualidade e confiabilidade do projeto.
 
 ## Instruções para Desenvolvimento
 
