@@ -78,6 +78,65 @@ button:hover {
   text-align: center;
 }
 
-.alimentacao-container {
+.formulario {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.atividades-cadastradas {
   margin-top: 40px;
+}
+
+.atividades-cadastradas ul {
+  padding-left: 0;
+}
+
+.atividades-cadastradas li {
+  max-width: 600px;
+  margin: auto;
+  background-color: #f4f4f4;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border-left: 5px solid #dd4fb7;
+}
+
+.atividades-cadastradas h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .formulario, section {
+    padding: 15px;
+  }
+  
+  button {
+    font-size: 14px;
+  }
+
+.atividade-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.atividade-info {
+    flex-grow: 1;
+}
+
+.atividade-buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+.atividade-buttons button:hover {
+    color: #007bff;
+}
 }

@@ -20,7 +20,7 @@ export class RefeicaoService {
   }
 
   updateRefeicao(refeicao: Alimentacao): Observable<Alimentacao> {
-    return this.http.put<Alimentacao>(API_ENDPOINTS.Refeicoes.updateRefeicao(refeicao.alimentacaoId), refeicao);
+    return this.http.put<Alimentacao>(API_ENDPOINTS.Refeicoes.updateRefeicao(refeicao.AlimentacaoId), refeicao);
   }
 
   deleteRefeicao(id: number): Observable<void> {

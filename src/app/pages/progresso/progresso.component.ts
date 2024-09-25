@@ -28,6 +28,7 @@ export class ProgressoComponent implements OnInit {
     }
   };
   mensagemSucesso: string = '';
+  editingIndex: number | null = null;
 
   constructor(private progressoService: ProgressoService) {}
 
@@ -72,5 +73,35 @@ export class ProgressoComponent implements OnInit {
         DataNascimento: '00/00/0000'
       }
     };
+  }
+
+  editProgresso(index: number): void {
+    this.newProgresso = { ...this.progressos[index] };
+    this.editingIndex = index;
+  }
+
+  updateProgresso(): void {
+    if (this.newProgresso.ProgressoId != null) {
+      this.progressoService.updateProgresso(this.newProgresso).subscribe(
+        (data) => {
+          if (this.editingIndex !== null) {
+            this.progressos[this.editingIndex] = data;
+            this.editingIndex = null;
+          }
+          const index = this.progressos.findIndex(r => r.ProgressoId === data.ProgressoId);
+          if (index !== -1) {
+            this.progressos[index] = data;
+          }
+        },
+        (error) => console.error('Erro ao atualizar refeição', error)
+      );
+    }
+  }
+
+  deleteProgresso(index: number): void {
+    this.progressoService.deleteProgresso(this.progressos[index].ProgressoId).subscribe(
+      () => this.progressos.splice(index, 1),
+      (error) => console.error('Erro ao deletar progresso', error)
+    );
   }
 }
